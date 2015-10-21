@@ -22,10 +22,10 @@ def parse_query_value(query_str, tf):
             # Parse datetime string or timestamp
             try:
                 d = epoch(float(query_str))
-                d.shift('Asia/Shanghai');
+                d.shift(tf);
             except ValueError:
                 d = parse(str(query_str))
-                d.shift('Asia/Shanghai');
+                d.shift(tf);
     except (TypeError, ValueError):
         d = None
     return d
